@@ -134,7 +134,7 @@ const list = [
 
 // Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
 
-const provaEl = document.querySelector(".container-fluid .row");
+const iconsEl = document.querySelector(".container-fluid .row");
 
 for (let i = 0; i < list.length; i++) {
   const icon = list[i];
@@ -149,5 +149,7 @@ for (let i = 0; i < list.length; i++) {
         </div>
     `;
 
-  provaEl.insertAdjacentHTML("beforeend", cardMarkup);
+  iconsEl.insertAdjacentHTML("beforeend", cardMarkup);
 }
+
+// Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
