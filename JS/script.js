@@ -143,7 +143,9 @@ for (let i = 0; i < list.length; i++) {
   const cardMarkup = `
     <div class="card" style="width: 18rem">
           <div class="card-body">
-            <i class="fa-solid ${icon.prefix + icon.name}"></i>
+            <i class="fa-solid ${icon.prefix + icon.name} ${
+    "fnt-" + icon.color
+  }"></i>
             <p>${icon.name}</p>
           </div>
         </div>
@@ -153,3 +155,11 @@ for (let i = 0; i < list.length; i++) {
 }
 
 // Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
+
+/* <i class="fa-solid ${icon.prefix + icon.name} ${
+    "fnt-" + icon.color
+}"></i>
+
+*/
+
+// Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
