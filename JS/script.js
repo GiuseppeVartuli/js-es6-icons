@@ -135,6 +135,32 @@ const list = [
 // Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
 
 const iconsEl = document.querySelector(".container-fluid .row");
+const kindEl = document.getElementById("kind");
+// Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+kindEl.addEventListener("change", function () {
+  console.log(kindEl.value);
+
+  iconsEl.innerHTML = "";
+
+  for (let i = 0; i < list.length; i++) {
+    const icon = list[i];
+    console.log(icon);
+    if (icon.type === kindEl.value || kindEl.value === "all") {
+      const cardMarkup = `
+      <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <i class="fa-solid ${icon.prefix + icon.name} ${
+        "fnt-" + icon.color
+      }"></i>
+              <p>${icon.name}</p>
+            </div>
+          </div>
+      `;
+
+      iconsEl.insertAdjacentHTML("beforeend", cardMarkup);
+    }
+  }
+});
 
 for (let i = 0; i < list.length; i++) {
   const icon = list[i];
@@ -162,4 +188,4 @@ for (let i = 0; i < list.length; i++) {
 
 */
 
-// Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+// const user = list.filter((icon) => icon.type === 'user');
